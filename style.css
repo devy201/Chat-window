@@ -1,0 +1,152 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: 0;
+}
+
+html{
+    font-family: Helvetica, sans-serif;
+}
+
+/* typicons */
+[class*="typicons-"]:before {
+    font-family: 'Typicons', sans-serif;
+}
+
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+
+/******* CHAT WINDOW********/
+.chat-window{
+    width: 350px;
+    height: 400px;
+    position: relative;
+}
+/**************** TOP BAR ******************/
+.top-bar{
+    height: 33px;
+    background: #666;
+    position: relative;
+    overflow: hidden;
+    padding: 7px 15px 0 15px;
+    color: #fff;
+}
+.top-bar::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    right: 0;
+    bottom: -100%;
+}
+.top-bar.blinking::before{
+    opacity: 0.25;
+    background: radial-gradient(white, black);
+    -webkit-animation: pulse 1s ease alternate infinite;
+}
+.top-bar h1{
+    display: inline-block;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+.top-bar .icon{
+    display: inline-block;
+}
+.top-bar .typicons-message{
+    margin: 0 15px 0 0;
+}
+.typicons-minus, .typicons-timer{
+    cursor: pointer;
+}
+/********** CONVERSATION WINDOW *************/
+.conversation{
+    background: #e5e5e5;
+    list-style: none;
+    padding: 10px;
+    max-height: 400px;
+    min-height: 304px;
+}
+.conversation li{
+    display: -webkit-flex;
+    display: flex;
+    margin: 10px 0;
+}
+.self{
+    -webkit-justify-content: flex-end;
+    -webkit-align-items: flex-end;
+}
+.avatar{
+    width: 40px;
+    position: relative;
+
+}
+.self .avatar{
+    -webkit-order: 2;
+}
+.avatar img{
+    width: 100%;
+    display: block;
+}
+.other .avatar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 5px solid white;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+.self .avatar::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 5px solid white;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+.message{
+    background: white;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(black, 0.2);
+}
+.message p{
+    font-size: 14px;
+}
+.message div{
+    font-size: 12px;
+    font-style: italic;
+}
+
+/************** ANSWER MESSAGE ************/
+.send-message{
+    display: flex;
+    display: -webkit-flex;
+    position: absolute;
+    bottom: 0;
+}
+#sending-message-text{
+    width: 100%;
+    resize: none;
+    font-size: 15px;
+    padding: 2px 5px 2px 5px;
+}
+#send{
+    width: 100px;
+}
+
+@-webkit-keyframes pulse {
+    from { opacity: 0; }
+    to { opacity: 0.5; }
+}

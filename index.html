@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hangouts chat window</title>
+    <meta name="description" content="Example from CSS-tricks block">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <style>@import url(http://weloveiconfonts.com/api/?family=typicons);</style>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="autoresize.plugin.js"></script>
+    <script src="common.js"></script>
+</head>
+<body>
+    <section class="chat-window">
+        <header class="top-bar">
+            <div class="left">
+                <span class="icon typicons-message"></span>
+                <h1>Hangouts</h1>
+            </div>
+            <div class="right">
+                <span class="shut-down icon typicons-minus"></span>
+                <span class="close icon typicons-times"></span>
+            </div>
+        </header>
+        <ol class="conversation">
+            <li class="other">
+                <div class="avatar">
+                    <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/c5.5.65.65/s56x56/542662_102029343317578_783417382_t.jpg"/>
+                </div>
+                <div class="message">
+                    <p>Some text...</p>
+                    <div class="nickname">Somebody @ <time datetime="2008-02-14">Valentines day</time></div>
+                </div>
+            </li>
+            <li class="self">
+                <div class="avatar">
+                    <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/c28.6.75.75/s56x56/523957_429639477081252_1021214169_s.jpg"/>
+                </div>
+                <div class="message">
+                    <p>Some text...</p>
+                    <div class="nickname">You @ <time datetime="2008-02-14">Valentines day</time></div>
+                </div>
+            </li>
+        </ol>
+        <div class="send-message">
+            <textarea name="sending-message-text" id="sending-message-text" cols="30" rows="2"></textarea>
+            <button id="send">Send</button>
+        </div>
+    </section>
+</body>
+</html>
